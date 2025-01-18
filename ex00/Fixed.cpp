@@ -9,7 +9,7 @@ Fixed::Fixed( void ) : _rawBits(0)
 Fixed::Fixed( Fixed const &src )
 {
     std::cout << "Copy constructor called" << std::endl;
-    *this = src;
+	this->setRawBits(src.getRawBits());
 }
 
 Fixed::~Fixed( void )
@@ -21,7 +21,7 @@ Fixed & Fixed::operator=(Fixed const & rhs)
 {
     std::cout << "Copy assignment operator called" << std::endl;
     if (this != &rhs)
-        this->_rawBits = rhs.getRawBits();
+		this->setRawBits(rhs.getRawBits());
     return *this;
 }
 
